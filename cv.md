@@ -9,7 +9,7 @@
 * **Discord:** cjim57256
 
 ## Briefly About Myself:
-
+My goal is to learn everything new and exciting. I love programming and drinking coffee. I can (like) to spend a lot of time on what interests me. My strengths are in problem solving and discipline. I want to gain knowledge and skills that will be sufficient for employment in an epam-level company.
 
 ## Skills
 * Git/github
