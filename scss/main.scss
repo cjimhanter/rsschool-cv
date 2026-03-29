@@ -1,1 +1,25 @@
-@import "normalize";
+@charset "UTF-8";
+
+// Base
+@import "base/normalize";
+@import "base/typography";
+@import "base/mixins";
+
+// Components
+@import "components/visually-hidden";
+@import "components/container";
+@import "components/navigation";
+@import "components/header";
+@import "components/section";
+@import "components/footer";
+
+// Pages
+@import "pages/main/about-me";
+@import "pages/main/skills";
+@import "pages/main/projects";
+@import "pages/main/experience";
+@import "pages/main/facts";
+@import "pages/main/education";
+@import "pages/main/languages";
+
+

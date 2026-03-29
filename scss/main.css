@@ -1,13 +1,22 @@
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
    ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  /* Change the default font family in all browsers (opinionated). */
+  font-family: "Poppins", Verdana, sans-serif;
+  font-size: 100%;
+  line-height: 1.5em;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -31,20 +40,91 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin: 1.5rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin: 1.5rem 0;
+}
+
+h3 {
+  font-size: 1.17rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+h5 {
+  font-size: 0.83rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+h6 {
+  font-size: 0.67rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 /* Grouping content
    ========================================================================== */
 /**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+blockquote {
+  margin: 1.5rem 40px;
+}
+
+dl,
+ol,
+ul {
+  margin: 1.5rem 0;
+}
+
+/**
+ * Turn off margins on nested lists.
+ */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+figure {
+  margin: 1.5rem 40px;
+}
+
+/**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -55,14 +135,24 @@ main {
 }
 
 /**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+p,
+pre {
+  margin: 1.5rem 0;
+}
+
+/**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 code,
 kbd,
 samp, pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Links
@@ -81,9 +171,12 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -169,10 +262,14 @@ input,
 optgroup,
 select,
 textarea {
-  line-height: 1.15; /* 1 */
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  margin: 0; /* 2 */
+  line-height: 1.5rem;
+  /* 1 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -187,7 +284,8 @@ button {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -244,8 +342,10 @@ input {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -261,8 +361,10 @@ input {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
   /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
@@ -276,8 +378,10 @@ input {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /**
@@ -294,12 +398,18 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  color: inherit; /* 2 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -332,6 +442,23 @@ summary {
   display: list-item;
 }
 
+menu {
+  /*
+   * 1. Set 1 unit of vertical rhythm on the top and bottom margin.
+   * 2. Set consistent space for the list style image.
+   */
+  margin: 1.5rem 0;
+  /* 1 */
+  padding: 0 0 0 40px;
+  /* 2 */
+  /**
+   * Turn off margins on nested lists.
+   */
+}
+menu menu, ol menu, ul menu {
+  margin: 0;
+}
+
 /* Misc
    ========================================================================== */
 /**
@@ -346,6 +473,185 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Poppins", Verdana, sans-serif;
+  font-size: 1.6rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+}
+.navigation__item {
+  list-style: none;
+  cursor: pointer;
+}
+.navigation__item a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navigation__item a:hover {
+  color: #2563eb;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.header__container__logo {
+  cursor: progress;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #cccccc;
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__copyrigth {
+  color: #666666;
+  margin: 0;
+}
+
+.contacts-links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-links__link {
+  cursor: pointer;
+  color: #333333;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.social-links__link:hover {
+  color: #3b82f6;
+}
+
+.rs-logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.about-me__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 3.2rem;
+}
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5);
+  z-index: -1;
+  border-radius: 50%;
+}
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: -16px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.about-me__photo {
+  display: block;
+  width: 22.5rem;
+  height: 22.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.skills {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 24px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.list__item {
+  list-style-type: none;
+}
+
+.experience {
+  background-color: #f5f5f5;
+}
+
+.education {
+  background-color: #f5f5f5;
 }
 
 /*# sourceMappingURL=main.css.map */

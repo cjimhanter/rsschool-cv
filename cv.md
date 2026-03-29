@@ -16,9 +16,10 @@ Phone: +7 901 666 07 25
   *Front-end course*
   
   **09.2022 - in progress**, Kaliningrad, Russia       
-  *Bachelor of Science in Applied Mathematics and Computer Science*             
+  *Bachelor of Science in Computer Science*             
 
 ## Personal interests
 Traveling, languages, jazz
 
 ## Professional Experience
+**Work on this CV**

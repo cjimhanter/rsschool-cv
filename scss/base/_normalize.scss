@@ -5,21 +5,18 @@
 @import 'vertical-rhythm';
 
 // If we've customized any font variables, we'll need extra properties.
-@if $normalize-vertical-rhythm == null
-  and (
-    $base-line-height != 24px
-    or $base-unit != 'em'
-    or $h2-font-size != 1.5  * $base-font-size
-    or $h3-font-size != 1.17 * $base-font-size
-    or $h4-font-size != 1    * $base-font-size
-    or $h5-font-size != 0.83 * $base-font-size
-    or $h6-font-size != 0.67 * $base-font-size
-  ) {
+@if $normalize-vertical-rhythm ==null and ($base-line-height !=24px or $base-unit !='em'
+
+  or $h2-font-size !=1.5 * $base-font-size or $h3-font-size !=1.17 * $base-font-size or $h4-font-size !=1 * $base-font-size or $h5-font-size !=0.83 * $base-font-size or $h6-font-size !=0.67 * $base-font-size ) {
   $normalize-vertical-rhythm: true !global;
 }
 
 /* Document
    ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
 
 /**
  * 1. Correct the line height in all browsers.
@@ -31,20 +28,27 @@ html {
     /* Change the default font family in all browsers (opinionated). */
     font-family: $base-font-family;
   }
-  @if $base-font-size != 16px or $normalize-vertical-rhythm {
+
+  @if $base-font-size !=16px or $normalize-vertical-rhythm {
     // Correct old browser bug that prevented accessible resizing of text
     // when root font-size is set with px or em.
     font-size: math.div($base-font-size, 16px) * 100%;
   }
+
   @if $normalize-vertical-rhythm {
     // Establish a vertical rhythm unit using $base-font-size and
     // $base-line-height variables.
-    line-height: math.div($base-line-height, $base-font-size) * 1em; /* 1 */
+    line-height: math.div($base-line-height, $base-font-size) * 1em;
+    /* 1 */
   }
+
   @else {
-    line-height: 1.15; /* 1 */
+    line-height: 1.15;
+    /* 1 */
   }
-  -webkit-text-size-adjust: 100%; /* 2 */
+
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -73,6 +77,7 @@ main {
 
 h1 {
   @include normalize-font-size($h1-font-size);
+
   @if $normalize-vertical-rhythm {
     @include normalize-line-height($h1-font-size);
   }
@@ -81,6 +86,7 @@ h1 {
     /* Set 1 unit of vertical rhythm on the top and bottom margins. */
     @include normalize-margin(1 0, $h1-font-size);
   }
+
   @else {
     margin: 0.67em 0;
   }
@@ -142,6 +148,7 @@ h1 {
 
   ol,
   ul {
+
     ol,
     ul {
       margin: 0;
@@ -168,9 +175,12 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -198,8 +208,10 @@ main {
  */
 
 %monospace {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 pre {
@@ -226,9 +238,12 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -329,14 +344,21 @@ optgroup,
 select,
 textarea {
   @if $normalize-vertical-rhythm {
-    @include normalize-line-height($base-font-size); /* 1 */
+    @include normalize-line-height($base-font-size);
+    /* 1 */
   }
+
   @else {
-    line-height: 1.15; /* 1 */
+    line-height: 1.15;
+    /* 1 */
   }
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  margin: 0; /* 2 */
+
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -353,7 +375,8 @@ button {
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -406,8 +429,10 @@ input {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -425,8 +450,10 @@ input {
  */
 
 [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 
   /**
    * Remove the inner padding in Chrome and Safari on macOS.
@@ -443,8 +470,10 @@ input {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /**
@@ -463,12 +492,18 @@ fieldset {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  color: inherit; /* 2 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -514,8 +549,10 @@ summary {
      * 2. Set consistent space for the list style image.
      */
 
-    @include normalize-margin(1 0); /* 1 */
-    padding: 0 0 0 $indent-amount; /* 2 */
+    @include normalize-margin(1 0);
+    /* 1 */
+    padding: 0 0 0 $indent-amount;
+    /* 2 */
 
     /**
      * Turn off margins on nested lists.
