@@ -1,0 +1,44 @@
+// Footer component styles
+.footer {
+    background-color: $color-bg-secondary;
+    border-top: 1px solid $color-gray-medium;
+    margin-top: 4rem;
+    padding: 2rem 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+.footer__copyrigth {
+    color: $color-text-secondary;
+    margin: 0;
+}
+
+.contacts-links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-links__link {
+    cursor: pointer;
+    color: $color-text-primary;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-primary-light;
+    }
+}
+
+.rs-logo {
+    width: 4rem;
+    height: 4rem;
+}

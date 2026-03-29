@@ -1,0 +1,15 @@
+.skills {
+    background-color: $color-bg-secondary;
+    padding: 2rem;
+    border-radius: $base-line-height;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.list__item {
+    list-style-type: none;
+}
